@@ -19,16 +19,16 @@ import lombok.AllArgsConstructor;
 public class VideoGameImpl implements VideoGameService{
 
     ConsoleRepository consoleRepository;
-    ReviewRepository vGExperienceRepository;
+    ReviewRepository reviewRepository;
     VideoGameRepository videoGameRepository;
 
     @Override
     public VideoGame saveVideoGame(Long console_id, Long review_id, VideoGame videogame) {
 
         Console console = consoleRepository.findById(console_id).get();
-        Review vGExperience = vGExperienceRepository.findById(review_id).get();
+        Review review = reviewRepository.findById(review_id).get();
         videogame.setConsole(console);
-        videogame.setVGExperience(vGExperience);
+        videogame.setReview(review);
         return videoGameRepository.save(videogame);
     }
 
