@@ -35,7 +35,7 @@ public class VideoGame {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "review_id", referencedColumnName = "id")
-    private Review vGExperience;
+    private Review review;
 
     
 }

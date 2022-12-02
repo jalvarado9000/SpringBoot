@@ -22,7 +22,7 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    private int number;
+   
 
     @NonNull
     @Column(name = "is_played", nullable = false)

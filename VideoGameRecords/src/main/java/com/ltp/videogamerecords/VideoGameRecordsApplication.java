@@ -32,12 +32,12 @@ public class VideoGameRecordsApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 
-		Review vgExperience1 = new Review(true, true, 10);
-		Review vgExperience2 = new Review(true, false, 4);
+		Review review1 = new Review(true, true, 10);
+		Review review2 = new Review(true, false, 4);
 
-		reviewRepository.save(vgExperience1);
+		reviewRepository.save(review1);
 		
-		reviewRepository.save(vgExperience2);
+		reviewRepository.save(review2);
 
 
 
@@ -52,9 +52,9 @@ public class VideoGameRecordsApplication implements CommandLineRunner{
 		VideoGame videogame2 = new VideoGame("Nioh");
 
 		videogame1.setConsole(console1);
-		videogame1.setVGExperience(vgExperience1);
+		videogame1.setReview(review1);
 		videogame2.setConsole(console2);
-		videogame2.setVGExperience(vgExperience2);
+		videogame2.setReview(review2);
 
 		videoGameRepository.save(videogame1);
 		videoGameRepository.save(videogame2);
