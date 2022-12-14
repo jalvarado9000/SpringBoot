@@ -1,4 +1,4 @@
-package com.ltp.videogamerecords.entity;
+package com.ltp.videogamerecords.backend.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

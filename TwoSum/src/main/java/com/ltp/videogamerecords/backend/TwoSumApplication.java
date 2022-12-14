@@ -1,4 +1,4 @@
-package com.ltp.videogamerecords;
+package com.ltp.videogamerecords.backend;
 
 import java.util.Arrays;
 import java.util.function.ToDoubleBiFunction;
@@ -9,9 +9,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
-import com.ltp.videogamerecords.entity.TwoSum;
-import com.ltp.videogamerecords.repository.TwoSumRepository;
-import com.ltp.videogamerecords.service.TwoSumService;
+import com.ltp.videogamerecords.backend.repository.TwoSumRepository;
+import com.ltp.videogamerecords.backend.service.TwoSumService;
 
 
 

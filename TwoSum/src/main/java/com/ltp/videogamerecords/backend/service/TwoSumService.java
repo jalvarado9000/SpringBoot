@@ -1,8 +1,8 @@
-package com.ltp.videogamerecords.service;
+package com.ltp.videogamerecords.backend.service;
 
 import java.util.List;
 
-import com.ltp.videogamerecords.entity.TwoSum;
+import com.ltp.videogamerecords.backend.entity.TwoSum;
 
 public interface TwoSumService  {
 

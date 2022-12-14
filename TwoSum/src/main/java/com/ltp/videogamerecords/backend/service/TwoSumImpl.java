@@ -1,4 +1,4 @@
-package com.ltp.videogamerecords.service;
+package com.ltp.videogamerecords.backend.service;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -7,8 +7,8 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import com.ltp.videogamerecords.entity.TwoSum;
-import com.ltp.videogamerecords.repository.TwoSumRepository;
+import com.ltp.videogamerecords.backend.entity.TwoSum;
+import com.ltp.videogamerecords.backend.repository.TwoSumRepository;
 
 import lombok.AllArgsConstructor;
 
