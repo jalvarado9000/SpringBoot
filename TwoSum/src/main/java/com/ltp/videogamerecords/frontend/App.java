@@ -106,33 +106,33 @@ public static void deleteResource(long id) {
 
     
 
-    public static Class<? extends TwoSum> sendMoney(TwoSum twoSum) {
-        final RestTemplate restTemplate = new RestTemplate();
-        final String API_BASE_URL = "http://localhost:8080/sum";
-    
-        try {
-            HttpEntity<TwoSum> request = new HttpEntity<>(twoSum);
-            ResponseEntity<TwoSum> response = restTemplate.exchange(
-                    API_BASE_URL,
-                    HttpMethod.POST,
-                    request,
-                    TwoSum.class
-            );
-    
-            if (response.getStatusCode().is2xxSuccessful()) {
-                System.out.println("Transaction was successful.");
-                return response.getBody().getClass();
-            } else {
-                // handle error
-                System.out.println("Error occurred while processing transaction: " + response.getStatusCode());
-                return null;
-            }
-        } catch (Exception e) {
-            // handle exception
-            System.out.println("Exception occurred while processing transaction: " + e.getMessage());
+public static TwoSum sendMoney(TwoSum twoSum) {
+    final RestTemplate restTemplate = new RestTemplate();
+    final String API_BASE_URL = "http://localhost:8080/sum";
+
+    try {
+        HttpEntity<TwoSum> request = new HttpEntity<>(twoSum);
+        ResponseEntity<TwoSum> response = restTemplate.exchange(
+                API_BASE_URL,
+                HttpMethod.POST,
+                request,
+                TwoSum.class
+        );
+
+        if (response.getStatusCode().is2xxSuccessful()) {
+            System.out.println("Transaction was successful.");
+            return response.getBody();
+        } else {
+            // handle error
+            System.out.println("Error occurred while processing transaction: " + response.getStatusCode());
             return null;
         }
+    } catch (Exception e) {
+        // handle exception
+        System.out.println("Exception occurred while processing transaction: " + e.getMessage());
+        return null;
     }
+}
 
     public static void printSendMoney() {
 
