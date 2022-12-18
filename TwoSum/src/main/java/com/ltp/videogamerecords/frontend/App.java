@@ -38,7 +38,8 @@ public class App {
             }
             case 2:printSendMoney();
             break;
-            //case 3: deleteSendMoney();
+            case 3: deleteSendMoney();
+            break;
             case 4: option = continueWithProgram();
             break;
             default: System.out.println("Option was not found");
@@ -48,6 +49,14 @@ public class App {
        
     }while(option == 'Y');
   
+    }
+
+    public static void deleteSendMoney(){
+        Scanner in = new Scanner(System.in);
+        System.out.println("What is the id of the problem you want to delete?");
+        long id = in.nextLong();
+        deleteResource(id);
+    
     }
 
 
@@ -83,6 +92,17 @@ public class App {
         return selection;
 
     }
+
+   
+
+public static void deleteResource(long id) {
+    final RestTemplate restTemplate = new RestTemplate();
+    final String API_BASE_URL = "http://localhost:8080/sum/delete/";
+    HttpHeaders headers = new HttpHeaders();
+    // set headers here
+    HttpEntity<Void> requestEntity = new HttpEntity<>(headers);
+    restTemplate.exchange(API_BASE_URL + id, HttpMethod.DELETE, requestEntity, Void.class);
+}
 
     
 

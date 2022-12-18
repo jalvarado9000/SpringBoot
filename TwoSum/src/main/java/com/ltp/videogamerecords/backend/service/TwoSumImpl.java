@@ -106,6 +106,16 @@ return indeces;
 
 
 
+    @Override
+    public void deleteById(long id) {
+        twoSumRepository.deleteById(id);
+        
+    }
+
+
+
+
+
    
 
 

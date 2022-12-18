@@ -10,5 +10,6 @@ public interface TwoSumService  {
     TwoSum save(TwoSum twoSum);
     int[] convertInt(String string);
     List<TwoSum> getAllTwoSum();
+    void deleteById(long id);
     
 }
