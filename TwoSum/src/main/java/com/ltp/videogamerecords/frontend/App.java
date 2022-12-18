@@ -16,16 +16,34 @@ public class App {
 
     public static void main(String[] args) {
 
+        String option = "";
 
-    String nums = "[3,2,4]";
+        
 
-    int target = 6;
+    do{
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Please write a array");
+        String nums = "[" + in.nextLine() + "]";
+        System.out.println("Please write the target");
+        int target = in.nextInt();
+
+        TwoSum twoSum = new TwoSum(nums,target);
+
+        sendMoney(twoSum);
+        printSendMoney();
+
+        
+    }while(true);
+
+   // String nums = "[3,2,4]";
+
+    //int target = 6;
 
 
-    TwoSum twoSum = new TwoSum(nums,target);
+    //TwoSum twoSum = new TwoSum(nums,target);
 
-    sendMoney(twoSum);
-    printSendMoney();
+   
     
   
     }
