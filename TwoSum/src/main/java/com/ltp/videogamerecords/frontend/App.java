@@ -16,7 +16,7 @@ public class App {
 
     public static void main(String[] args) {
 
-        char option = 'Y';
+        char option = 'Y'; 
 
     /*
     Example:

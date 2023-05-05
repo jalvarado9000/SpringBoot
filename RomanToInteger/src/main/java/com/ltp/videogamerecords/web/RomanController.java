@@ -1,20 +1,24 @@
 package com.ltp.videogamerecords.web;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.ltp.videogamerecords.entity.Roman;
 import com.ltp.videogamerecords.service.RomanService;
 
 import lombok.AllArgsConstructor;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/roman")
 @AllArgsConstructor
@@ -32,6 +36,7 @@ public class RomanController {
     public ResponseEntity<Roman> saveRoman(@RequestBody Roman roman){
         return new ResponseEntity<>(romanService.save(roman), HttpStatus.CREATED);
     }
+
 
 
 }
