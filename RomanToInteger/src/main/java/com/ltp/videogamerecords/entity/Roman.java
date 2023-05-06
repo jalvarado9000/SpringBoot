@@ -12,17 +12,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+//Annotation to not write getter,setter etc.
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "roman")
+
+//important annotation in order to declare this class as Entity
 @Entity
+
+//name of the table
+@Table(name = "roman")
 public class Roman {
 
-
+//generates once the object is created
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+//values of the database
 @Column(name = "id")
 private long id;
 @Column(name = "roman")
