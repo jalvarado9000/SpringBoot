@@ -1,24 +1,19 @@
-<!-- HTML form -->
-<form id="myForm">
-    <label for="romanInput">Enter Roman numeral:</label>
-    <input type="text" id="romanInput" name="roman">
-    <button type="submit">Submit</button>
-  </form>
 
-   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Roman</th>
-          <th>Conversion</th>
-        </tr>
-      </thead>
-      <tbody id="roman-values"></tbody>
-    </table>
-  
-  <script>
-    const form = document.getElementById("myForm");
+
+const form = document.getElementById('myForm');
+const input = document.getElementById('romanInput');
+
+form.addEventListener('submit', (event) => {
+  const inputValue = input.value;
+  if (/\d/.test(inputValue)) {
+    event.preventDefault();
+    alert('Input cannot contain numbers!');
+  }
+});
+
+
+
+//const form = document.getElementById("myForm");
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const data = {
@@ -64,9 +59,3 @@
         .catch(error => console.error(error));
 
 
-
-
-
-
-
-  </script>
