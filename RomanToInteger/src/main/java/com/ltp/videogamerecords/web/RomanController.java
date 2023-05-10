@@ -51,7 +51,7 @@ public class RomanController {
 
 
 
-    @RequestMapping(value = "/{id}/update", method = RequestMethod.PUT)
+    @PutMapping("/{id}/update")
     public ResponseEntity<Roman> updateRoman(@PathVariable long id, @RequestBody Roman roman){
         return new ResponseEntity<>(romanService.update(id,roman), HttpStatus.OK);
     }
