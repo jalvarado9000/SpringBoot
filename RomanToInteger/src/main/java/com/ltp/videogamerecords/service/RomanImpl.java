@@ -3,6 +3,8 @@ package com.ltp.videogamerecords.service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 import com.ltp.videogamerecords.entity.Roman;
 import com.ltp.videogamerecords.repository.RomanRepository;
@@ -80,6 +82,24 @@ public class RomanImpl implements RomanService {
         return (List<Roman>)romanRepository.findAll();
     }
     
+
+    //not working properly but working lol
+    public Roman update(long id,Roman roman){
+        
+        if(romanRepository.findById(id).isPresent()){
+
+            Roman r = new Roman();
+            r.setId(id);
+            r.setRoman(roman.getRoman());
+        return save(r);
+        }
+
+        return null;
+    }
+
+    public Roman getRomanValue(long id){
+        return romanRepository.findById(id).get();
+    }
 
 
     

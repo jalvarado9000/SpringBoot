@@ -1,5 +1,7 @@
 package com.ltp.videogamerecords.entity;
 
+import java.util.Optional;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +27,8 @@ import lombok.Setter;
 @Table(name = "roman")
 public class Roman {
 
+public Roman(Optional<Roman> findById) {
+    }
 //generates once the object is created
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)

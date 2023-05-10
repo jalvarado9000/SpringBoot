@@ -12,6 +12,9 @@ public interface RomanService {
     Roman save(Roman roman);
     //displays all values
     List<Roman> getAllRoman();
+    Roman update(long id, Roman roman);
+
+    Roman getRomanValue(long id);
     
     
 }
