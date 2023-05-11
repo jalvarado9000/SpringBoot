@@ -54,7 +54,7 @@ table {
 
 }
 
-#myForm{
+#myForm,#updateMyForm,#deleteForm{
     font-size: 40px;
     margin-top:10px;
     margin-bottom:50px;

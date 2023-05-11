@@ -15,6 +15,7 @@ public interface RomanService {
     Roman update(long id, Roman roman);
 
     Roman getRomanValue(long id);
+    void deleteRoman(long id);
     
     
 }

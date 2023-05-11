@@ -83,7 +83,7 @@ public class RomanImpl implements RomanService {
     }
     
 
-    //not working properly but working lol
+    //updates the numbers if the user chooses to
     public Roman update(long id,Roman roman){
         
         if(romanRepository.findById(id).isPresent()){
@@ -97,8 +97,13 @@ public class RomanImpl implements RomanService {
         return null;
     }
 
+    //gets the 
     public Roman getRomanValue(long id){
         return romanRepository.findById(id).get();
+    }
+
+    public void deleteRoman(long id){
+        romanRepository.deleteById(id);
     }
 
 

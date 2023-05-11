@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -36,8 +38,12 @@ public Roman(Optional<Roman> findById) {
 //values of the database
 @Column(name = "id")
 private long id;
+
+@NotBlank
 @Column(name = "roman")
 private String roman;
+
+@Min(value=0)
 @Column(name = "conversion")
 private int conversion;
 
