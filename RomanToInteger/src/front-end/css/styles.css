@@ -54,7 +54,7 @@ table {
 
 }
 
-#myForm,#updateMyForm,#deleteForm{
+#myForm{
     font-size: 40px;
     margin-top:10px;
     margin-bottom:50px;
@@ -65,6 +65,13 @@ input{
     
 }
 
+fieldset{
+    border: #d24300 solid;
+}
+
+
+
+
 
 
 @media only screen and (min-width:768px){
@@ -72,13 +79,52 @@ input{
         width: 35%;
     }
 
-    #myForm{
-        font-size: 100px;
+    #myForm,#updateMyForm,#deleteForm,#myForm2{
+        font-size: 25px;
         margin-top:10px;
         margin-bottom:50px;
+        
+        
     }
 
     input{
-        width: 700px;
+        width: 150px;
     }
+    #container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+       
+        
+        grid-gap: 20px;
+    
+      }
+      
+      #myForm,
+      #myForm2,
+      #deleteForm,
+      #updateMyForm {
+        grid-column: 1 / 1;
+        
+      }
+      
+      table {
+        margin:0;
+        grid-column: 2 / 3;
+      }
+      #container {
+        padding: 20px 20px 0;
+      }
+
+      #updateMyForm{
+        height: 250px;
+      }
+
+      #banner > img{
+        width: 70%;
+        
+    }
+
+    
+
+      
 }
