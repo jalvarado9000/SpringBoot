@@ -15,30 +15,31 @@ form.addEventListener('submit', (event) => {
 
 //Post Roman Number
 //const form = document.getElementById("myForm");
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = {
-        roman: document.getElementById("romanInput").value
-      };
-      fetch("http://localhost:8080/roman", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log("Success:", data);
-        // handle success response here
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        // handle error response here
-      });
-      location.reload();
-    });
-
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const data = {
+    roman: document.getElementById("romanInput").value
+  };
+  fetch("http://localhost:8080/roman", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log("Success:", data);
+    // handle success response here
+    
+    // Reload the page after successful processing
+    location.reload();
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+    // handle error response here
+  });
+});
 
     //GetAllElements
     fetch('http://localhost:8080/roman/int')
@@ -92,14 +93,19 @@ function handleDelete(event) {
 }
 
 
-//updates roman values by id
-const form3 = document.getElementById('updateMyForm');
-form3.addEventListener('submit', handleSubmit);
-
+//updates element but doesnt work
 function handleSubmit(event) {
   event.preventDefault();
-  const id = document.getElementById('id-update').value;
+  const idInput = document.getElementById('id-update');
   const roman = document.getElementById('roman-update').value;
+
+  const id = parseInt(idInput.value, 10);
+
+  if (isNaN(id)) {
+    alert('Please enter a valid number.');
+    return;
+  }
+
   const url = `http://localhost:8080/roman/${id}/update`;
 
   fetch(url, {
@@ -107,16 +113,25 @@ function handleSubmit(event) {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ roman })
+    body: JSON.stringify({ id, roman }) // Send both id and roman in the request body
   })
-  .then(response => response.json())
-  .then(data => {
-    const resultContainer = document.getElementById('result-updated');
-    resultContainer.innerHTML = `ID: ${data.id}, Roman: ${data.roman}, Conversion: ${data.conversion}`;
-  })
-  .catch(error => console.error(error));
-  location.reload();
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      const resultContainer = document.getElementById('result-updated');
+      resultContainer.innerHTML = `ID: ${data.id}, Roman: ${data.roman}, Conversion: ${data.conversion}`;
+      location.reload();
+    })
+    .catch(error => {
+      console.error('Fetch error:', error);
+      // Handle the error gracefully (e.g., display an error message to the user)
+    });
 }
+
 
 
  //GetElementById
@@ -136,4 +151,3 @@ function handleSubmit(event) {
      })
      .catch(error => console.error(error));
  }
- 

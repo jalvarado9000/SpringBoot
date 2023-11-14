@@ -1,130 +1,18 @@
-*,*::before,*::after{
-    box-sizing: border-box;
-}
+
 body{
     background-color: #F2B96C;
 }
 
-button{
-	background: #d24300;
-	color: #fff;
-	border: 1px solid #eee;
-	border-radius: 20px;
-	box-shadow: 5px 5px 5px #eee;
-	text-shadow: none;
-    
-    
-}
-
-
-#banner > img{
-    width: 100%;
-    
-}
-
-#roman-values{
-   background-color: black;
-}
-
-#roman-values > tr > td {
- color: orange;
-}
-
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 10px;
-}
-
-table {
-  margin-left: auto; 
-  margin-right: auto;
-}
-
-#container{
-    
-   text-align: center;
-    padding: 20px 20px 20px;
-    color:#16252A;
-    font-size: 20px;
-    width:100%;
-    height: 100%;
-    font-family: "Trirong", serif;
-   
-
-}
-
-#myForm{
-    font-size: 40px;
-    margin-top:10px;
-    margin-bottom:50px;
-}
-
-input{
-    width: 200px;
-    
-}
-
-fieldset{
-    border: #d24300 solid;
-}
 
 
 
 
 
 
-@media only screen and (min-width:768px){
-    #banner > img{
-        width: 35%;
-    }
 
-    #myForm,#updateMyForm,#deleteForm,#myForm2{
-        font-size: 25px;
-        margin-top:10px;
-        margin-bottom:50px;
-        
-        
-    }
 
-    input{
-        width: 150px;
-    }
-    #container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-       
-        
-        grid-gap: 20px;
-    
-      }
-      
-      #myForm,
-      #myForm2,
-      #deleteForm,
-      #updateMyForm {
-        grid-column: 1 / 1;
-        
-      }
-      
-      table {
-        margin:0;
-        grid-column: 2 / 3;
-      }
-      #container {
-        padding: 20px 20px 0;
-      }
 
-      #updateMyForm{
-        height: 250px;
-      }
 
-      #banner > img{
-        width: 70%;
-        
-    }
 
-    
 
       
-}
